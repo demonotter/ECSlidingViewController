@@ -188,8 +188,13 @@
     }
 }
 
+-(NSUInteger)supportedInterfaceOrientations {
+    return self.topViewController.supportedInterfaceOrientations;
+}
+
 - (BOOL)shouldAutorotate {
-    return self.currentOperation == ECSlidingViewControllerOperationNone;
+    //return self.currentOperation == ECSlidingViewControllerOperationNone;
+    return self.topViewController.shouldAutorotate;
 }
 
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods {
